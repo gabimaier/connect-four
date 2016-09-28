@@ -49,8 +49,6 @@ public class RefereeService {
         if (isWinningDiagonalToNW(board, move, rowNumber)) {
             return true;
         }
-
-        //TODO test
         return false;
     }
 

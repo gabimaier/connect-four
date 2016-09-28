@@ -10,7 +10,7 @@ import java.util.Arrays;
 import static gm.connectfour.domain.entity.Player.NONE;
 
 @Getter
-@Setter(AccessLevel.PRIVATE)
+@Setter(AccessLevel.NONE)
 @EqualsAndHashCode
 public class Board {
     private Player[][] cells;
@@ -42,6 +42,9 @@ public class Board {
         }
 
         public Board build(String strBoard){
+            if(strBoard == null || "".equals(strBoard)){
+                return null;
+            }
             final String[] rows = strBoard.split("\n");
             if(rows.length==0){
                 throw new IllegalArgumentException(strBoard);
